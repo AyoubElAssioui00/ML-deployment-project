@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Generation</title>
+    <link rel="stylesheet" href="/static/css/texgen_style.css">
+</head>
+<body>
+    <h1>Text Generation with GPT</h1>
+    <form action="/textgen" method="post">
+        <label for="userInput">Enter a prompt:</label>
+        <textarea id="userInput" name="userInput" rows="4" cols="50" required></textarea>
+        <br>
+        <button type="submit">Generate Text</button>
+    </form>
+    {% if generated_text %}
+        <h2>Generated Text:</h2>
+        <p>{{ generated_text }}</p>
+    {% endif %}
+</body>
+</html>

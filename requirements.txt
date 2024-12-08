@@ -1,0 +1,8 @@
+flask
+werkzeug
+tensorflow
+transformers
+numpy
+scikit-learn
+pillow
+

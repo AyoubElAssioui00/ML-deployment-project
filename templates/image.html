@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Recognition</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Object Recognition with VGG16</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label for="imagefile">Upload an image:</label>
+        <input type="file" id="imagefile" name="imagefile" accept="image/*" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <h2>Prediction:</h2>
+        <p>{{ prediction }}</p>
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
